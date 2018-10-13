@@ -17,7 +17,7 @@ void urna(FILE *f);
 void apuracao(FILE *f);
 //
 //////////////////////////////////////////////////
-//
+
 //////////////////////////////////////////////////
 //
 // 		ENUNCIADO EXECICIO 1
@@ -56,16 +56,20 @@ int main( int argc, char** argv )
 	}else 
 	{
 		system("clear");
+		
+//	Chama a função Urna.
+		urna(f);
 
-		urna(f);	//	Chama a função Urna.
+//	A função rewind(),  retorna o cursor de leitura 
+//	para o início do arquivo.
+//
+//	Esta é uma funação standard e pertence a biblioteca
+//	STDIO.H
+		rewind(f);	
 
-		rewind(f);	//	A função rewind(),  retorna o cursor de leitura 
-					//	para o início do arquivo.
-					//
-					//	Esta é uma funação standard e pertence a biblioteca
-					//	STDIO.H
 
-		apuracao(f);//	Chama a função Apuracao.
+//	Chama a função Apuracao.
+		apuracao(f);
 	}
 			
 	fclose(f);	// fecha o Arquivo
@@ -197,14 +201,15 @@ void apuracao(FILE *f)//
 
 	
 	int maior = candidato1;
+	int cand = 1;
 
-	if (candidato2 > maior ) maior = candidato2;
-	if (candidato3 > maior ) maior = candidato3;
-	if (candidato4 > maior ) maior = candidato4;
-	if (candidato5 > maior ) maior = candidato5;
+	if (candidato2 > maior ){ maior = candidato2; cand = 2; }
+	if (candidato3 > maior ){ maior = candidato3; cand = 3; }
+	if (candidato4 > maior ){ maior = candidato4; cand = 4; }
+	if (candidato5 > maior ){ maior = candidato5; cand = 5;}
 
 	
-	printf("%d\n",maior);
+	printf("candidato %d com %d\n", cand,maior);
 
 
 	printf("\n");
@@ -214,11 +219,11 @@ void apuracao(FILE *f)//
 	printf("    Votos Validos: %d\n", n_amostral);
 	printf("+----------------------------------------------+\n");
 
-	printf("Candidato 1: %.0f%% \n      Votos Totais: %d\n\n", candidato1_p, candidato1);
-	printf("Candidato 2: %.0f%% \n      Votos Totais: %d\n\n", candidato2_p, candidato2);
-	printf("Candidato 3: %.0f%% \n      Votos Totais: %d\n\n", candidato3_p, candidato3);
-	printf("Candidato 4: %.0f%% \n      Votos Totais: %d\n\n", candidato4_p, candidato4);
-	printf("Candidato 5: %.0f%% \n      Votos Totais: %d\n\n", candidato5_p, candidato5);
+	printf("Candidato 1: %.0f%%   Votos %d\n\n", candidato1_p, candidato1);
+	printf("Candidato 2: %.0f%%   Votos %d\n\n", candidato2_p, candidato2);
+	printf("Candidato 3: %.0f%%   Votos %d\n\n", candidato3_p, candidato3);
+	printf("Candidato 4: %.0f%%   Votos %d\n\n", candidato4_p, candidato4);
+	printf("Candidato 5: %.0f%%   Votos %d\n\n", candidato5_p, candidato5);
 
 	printf("+----------------------------------------------+\n");
 	printf("Total Nulos: %.0f %% \nVotos: %d\n", nulos_p, nulos);
