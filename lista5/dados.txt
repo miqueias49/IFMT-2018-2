@@ -1,3 +1,17 @@
-NOME;SEXO;COR;ALTURA;PESO
-Jase Maria M A 1.600000 63;
-Jase MariaMA1.60000063
+miqueias miranda             MD1.6563.2
+ana                          MD1.6563.2
+juca                         MD1.6563.2
+josefa                       FD1.6563.2
+as                           FD1.6563.2
+ana                          FD1.6563.2
+maria                        FD1.6563.2
+janaina                      FA1.6563.2
+Demolidor                    MB1.7373.2
+Ronaldo                      SA1.9090.0
+joca                         Mc1.2345.5
+joca                         FA23.502.3
+asd                          df1234.004567.0
+asd                          g123.00123.0
+asd                          ds1234.004567.0
+asd                          fm12.0056.0
+qwe                          me2.0090.0
