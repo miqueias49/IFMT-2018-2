@@ -31,27 +31,30 @@ char computarVoto(char n){
 	}
 }
 	/*Comparação do MAIS Votado*/
-	
 int contagem1(int m){
 
-	if(votosCan1 > votosCan2 && votosCan1 > votosCan3 && votosCan1 > votosCan4 && votosCan1 > votosCan5){
+	if(votosCan1 > votosCan2 && votosCan1 > votosCan3 && votosCan1 > votosCan4 && votosCan1 > votosCan5)
+	{
 		maisVotado = votosCan1;
 		candMaisVotado = '1';
-	}
-	
-	if(votosCan2 > votosCan1 && votosCan2 > votosCan3 && votosCan2 > votosCan4 && votosCan2 > votosCan5){
+	}else
+	if(votosCan2 > votosCan1 && votosCan2 > votosCan3 && votosCan2 > votosCan4 && votosCan2 > votosCan5)
+	{
 		maisVotado = votosCan2;
 		candMaisVotado = '2';
-	}
-	if(votosCan3 > votosCan1 && votosCan3 > votosCan2 && votosCan3 > votosCan4 && votosCan3 > votosCan5){
+	}else
+	if(votosCan3 > votosCan1 && votosCan3 > votosCan2 && votosCan3 > votosCan4 && votosCan3 > votosCan5)
+	{
 		maisVotado = votosCan3;
 		candMaisVotado = '3';
-	}
-	if(votosCan4 > votosCan1 && votosCan4 > votosCan2 && votosCan4 > votosCan3 && votosCan4 > votosCan5){
+	}else
+	if(votosCan4 > votosCan1 && votosCan4 > votosCan2 && votosCan4 > votosCan3 && votosCan4 > votosCan5)
+	{
 		maisVotado = votosCan4;
 		candMaisVotado = '4';
-	}
-	if(votosCan5 > votosCan1 && votosCan5 > votosCan2 && votosCan5 > votosCan3 && votosCan5 > votosCan4){
+	}else
+	if(votosCan5 > votosCan1 && votosCan5 > votosCan2 && votosCan5 > votosCan3 && votosCan5 > votosCan4)
+	{
 		maisVotado = votosCan5;
 		candMaisVotado = '5';
 	}
@@ -59,12 +62,11 @@ int contagem1(int m){
 		/*Comparação do MENOS Votado*/
 	
 int contagem2(int o){
-
-	if(votosCan1 < votosCan2 && votosCan1 < votosCan3 && votosCan1 < votosCan4 && votosCan1 < votosCan5){
+	if(votosCan1 < votosCan2 && votosCan1 < votosCan3 && votosCan1 < votosCan4 && votosCan1 < votosCan5)
+	{
 		menosVotado = votosCan1;
 		candMenosVotado = '1';
 	}
-	
 	if(votosCan2 < votosCan1 && votosCan2 < votosCan3 && votosCan2 < votosCan4 && votosCan2 < votosCan5){
 		menosVotado = votosCan2;
 		candMenosVotado = '2';
