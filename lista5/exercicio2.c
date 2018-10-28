@@ -4,12 +4,13 @@
 
 void alinha_nome (char *nome);
 void concatena(int tamanho_destino,char *destino, char *src);
+void minera_dados(FILE *fp);
 
 int main( int argc, char** argv )
 {
 
 
-	char nome[30] = {"miqueias miranda"};
+	char nome[30];
 	char full[50];
 	char sexo[2] = {"M"};
 	char cor[2] = {"D"};
@@ -28,101 +29,79 @@ int main( int argc, char** argv )
 			exit(1);
 	}else 
 	{	
-
-
 		while(1)
 		{
+			int test = 0;
+			printf("digite um numero negativo para sair:\n");
+			scanf("%d", &test);
+			fflush(stdin);
+			__fpurge(stdin);
+			if (test < 0) 
+			{
+				break;
+			}
 
-		printf("Cadastramento dos modelos\n");
-		
-		printf("Nome:\n");
-		scanf("%s", nome);
+			//////////////////////////////////////////////////
+			//
+			printf("Cadastramento dos modelos\n");
+			printf("Nome:\n");
 
-		fflush(stdin);
-		__fpurge(stdin);
+//			scanf("%30s",nome);
+//
+			gets(nome);
 
-		printf("sexo: (M/F)\n");
-		scanf("%c", &sexo[0]);
-
-
-		fflush(stdin);
-		__fpurge(stdin);
-
-		printf("Cor dos olhos:\n");
-		printf("A / B / C /D\n");
-		scanf("%c", &cor[0] );
-
-		printf("Altura:\n");
-		scanf("%f", &altura);
-
-		printf("Peso:\n");
-		scanf("%f", &peso);
-		
-
-
-
-
-
-		sprintf(alt,"%.2f",altura); // converte float em string
-		sprintf(Peso,"%.1f", peso); // 
+//			fflush(stdin);
+//			__fpurge(stdin);
+			
+			printf("sexo: (M/F)\n");
+			scanf("%c", &sexo[0]);
+			fflush(stdin);
+			__fpurge(stdin);
+			printf("Cor dos olhos:\n");
+			printf("A / B / C /D\n");
+			scanf("%c", &cor[0] );
+			printf("Altura:\n");
+			scanf("%f", &altura);
+			printf("Peso:\n");
+			scanf("%f", &peso);
+			sprintf(alt,"%.2f",altura); // converte float em string
+			sprintf(Peso,"%.1f", peso); //
+			//
+			//////////////////////////////////////////////////
 
 
-		alinha_nome(nome);
-		
+			alinha_nome(nome); 
 
-		concatena(50,full, nome);
-		concatena(50,full, sexo);
-		concatena(50,full, cor);
-		concatena(50,full, alt);
-		concatena(50,full, Peso);
+			concatena(50,full, nome);
+			concatena(50,full, sexo);
+			concatena(50,full, cor);
+			concatena(50,full, alt);
+			concatena(50,full, Peso);
 
-		fprintf(fp,"%s\n", full);
-		int test = 0;
-		printf("digite um numero negativo para sair:\n");
-		scanf("%d", &test);
+			fprintf(fp,"%s\n", full);
 
-		if (test < 0) 
-		{
-			break;
-		}
+
 		} // fim while
 
 		rewind(fp);
 		
-		while (1)
-		{
-		
-		char ch;
-
-		while (1) 
-		{
-
-			ch = fgetc(fp);
-			if (ch == '\n') 
-			{
-				break;
-			}else 
-			if (ch == EOF) 
-			{
-				break;
-			}
-			printf("%c", ch);
-		}// fim do while 
-		printf("\n");
-		if ( ch == EOF) 
-		{
-			break;
-		}
-		
-		}
-
 	}
+
+	rewind(fp);
+
+
+	minera_dados(fp);
+
 	fclose(fp);
 	return 0;
 }// fim da função main 
 
+//////////////////////////////////////////////////
+
 void alinha_nome (char *nome)//
 {
+
+//	char swap[30];
 	int tam, i, j;
 	for ( i = 0; i < 30 ; i++) // varre o vetor
 	{
@@ -131,7 +110,7 @@ void alinha_nome (char *nome)//
 			j = i;
 			while(j) 
 			{
-				if (j == 29) 
+				if (j == 30) 
 				{
 					nome[j] = '\0';
 					break;
@@ -139,33 +118,28 @@ void alinha_nome (char *nome)//
 				nome[j] = ' ';
 				j++;
 			}// fim do for j 
-
 		}
 		tam++;
-
 	}// fim do for i
 }
+
+//////////////////////////////////////////////////
 
 void concatena(int tamanho_destino,char *destino, char *src)//
 {
  	int /*tam,*/ i, j;
-
 	j = 0;
 	i = 0;
-
 	while(1)
 	{
-
 		if (i == (tamanho_destino - 1)) 
 		{
 			break;
 		}else 
-
 		if (destino[i] == '\0') 
 		{
 			while(1)
 			{
-
 				if (src[j] != '\0') 
 				{
 					destino[i] = src[j];
@@ -175,12 +149,49 @@ void concatena(int tamanho_destino,char *destino, char *src)//
 				{
 					destino[i] = '\0';
 					break;
-
 				}
-
 			}// fim do for j 
 		}
 		i++;
 	}// fim do for i
 }
 
+//////////////////////////////////////////////////
+
+void minera_dados(FILE *fp)
+{
+	char linha[50];
+
+	FILE *men, *woman;
+	if ((men = fopen("homens.bin","ab+")) == NULL) 
+	{
+		printf("Não foi posível abrir homens.bin\n");
+	}
+	
+	if ((woman = fopen("mulheres.bin","ab+")) == NULL) 
+	{
+		printf("Não foi posível abrir mulheres.bin\n");
+	}
+
+	while (1)
+	{
+		fgets(linha, 50, fp);
+		if ( feof(fp))
+		{
+			break;
+		}
+		if (linha[30] == 'M') 
+		{
+			fputs(linha,men);	
+		}else 
+		if (linha[30] == 'F') 
+		{
+			fputs(linha, woman);	
+		}
+	}
+
+	fclose(men);
+	fclose(woman);
+}
+
+//////////////////////////////////////////////////
