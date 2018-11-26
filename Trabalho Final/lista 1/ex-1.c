@@ -11,7 +11,14 @@
 // 		produto, representado por meio de um resgistro, possui um identificador inteiro, nome,
 // 		quantidade e custo unitario. O programa deve deve permitir a inclusao e remocao de 
 // 		novos produtos, consulta de produtos por nome, alteracao de registros, geracao de
-// 		relatorios  
+// 		relatorios 
+//
+// 		incluir
+//
+// 		consultar
+// 			- pesquisar
+//
+// 	
 //	
 //
 //==================================================================================
@@ -20,8 +27,13 @@
 #include <stdlib.h>
 #include <string.h>
 
-int main( int argc, char** argv )
+#include "DB-TXT.h"
+
+
+
+
+void main( int argc, char** argv )
 {	
 	
-		return 0;
+		
 }
