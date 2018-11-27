@@ -23,6 +23,7 @@ int main( int argc, char** argv )
 		{
 			case 1:
 				menu_1();
+				db_add(" %a %a %a %s         ");
 				break;
 			case 2:
 				menu_2();

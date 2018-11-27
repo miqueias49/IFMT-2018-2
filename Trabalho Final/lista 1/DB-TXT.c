@@ -1,19 +1,33 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdarg.h>
 
 FILE* data;
 
-int db_add(int* index, char* nome, float* qtd, float* preco )//
+void db_add(char* tam, ... )//
 {
+	va_list lista;
+	int ct = 1 , i;
+	
+	for ( i = 0; tam[i] != '\0'; i++)
+	{
+		if (tam[i] == '%') 
+		{
+			printf(" %d %c \n", ct,tam[i+1]);
+			ct ++;
+		}
+	}
+
 	if((data = fopen("estoque.txt","a+")) != NULL)
 	{
-		printf("%d %s %f %f\n", *index, nome, *qtd, *preco );
+
 	}else 
 	{
 		printf("falha em abrir arquivo\n");
 	}
+
+	printf("%d\n", ct);
 	fclose(data);
-	return 0;
 }
 		
 void menu_1()
@@ -52,4 +66,3 @@ void menu_3()
 	printf("|                   1 - salvar | 2 - cancelar                  |\n");
 	printf("+--------------------------------------------------------------+\n");
 }
-

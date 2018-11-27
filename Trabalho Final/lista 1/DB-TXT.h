@@ -10,9 +10,9 @@
 	};
 	typedef struct produto PROD;
 
-void db_add(int* index, char* nome, float* qtd, float* preco );
-void db_search(int flag);
-void db_exclude(int index);
+void db_add(char* tam, ... );
+void db_search(char* tam, ... );
+void db_exclude(char* tam, ... );
 
 void menu_1();
 void menu_2();
