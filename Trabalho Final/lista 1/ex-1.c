@@ -3,37 +3,38 @@
 // Create by: Miqueias da Silva Miranda
 //
 //==================================================================================
-// Program: Exercicio 1 da lista 1
-//
-// Release:
-// 
-// 1 - 	Faca um programa que simule um controle de estoque de uma loja, onde cada 
-// 		produto, representado por meio de um resgistro, possui um identificador inteiro, nome,
-// 		quantidade e custo unitario. O programa deve deve permitir a inclusao e remocao de 
-// 		novos produtos, consulta de produtos por nome, alteracao de registros, geracao de
-// 		relatorios 
-//
-// 		incluir
-//
-// 		consultar
-// 			- pesquisar
-//
-// 	
-//	
-//
 //==================================================================================
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
 #include "DB-TXT.h"
-
-
-
-
-void main( int argc, char** argv )
+int main( int argc, char** argv )
 {	
+	int opt;
+
+	while (1) 
+	{
+		scanf("%d", &opt);
+		if (opt < 0) 
+		{
+			break;
+		}
+		switch (opt) 
+		{
+			case 1:
+				menu_1();
+				break;
+			case 2:
+				menu_2();
+				break;
+			case 3:
+				menu_3();
+				break;
+			default:
+				printf("Opcao invalida.\n");
+				break;
+		}
+	}// fim do while 
 	
-		
+	return 0;
 }
