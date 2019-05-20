@@ -1,5 +1,8 @@
-# IFMT-2018-2
-trabalhos e listas de exercicios
+# IFMT-ENG.COMP
+Grade do Curso
+---
+
+Materia Pendentes/Finalizadas
 
 - [ ] **Primeiro Semestre**
   - [x] Calculo Diferencial e Integral 1
