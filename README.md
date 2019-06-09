@@ -4,14 +4,14 @@ Grade do Curso
 
 Materia Pendentes/Finalizadas
 
-- [ ] **Primeiro Semestre**
+- [x] **Primeiro Semestre**
   - [x] Calculo Diferencial e Integral 1
   - [x] Vetores e Geometria Analitica
   - [x] Fisica Geral e Experimental 1
   - [x] Algoritmos 1
   - [ ] Comunicacao e Expressao
 
-- [ ] **Segundo Semestre**
+- [x] **Segundo Semestre**
   - [ ] Calculo Diferencial e Integral 2
   - [ ] Algebra Linear
   - [ ] Fisica Geral e Experimental 2
@@ -19,13 +19,29 @@ Materia Pendentes/Finalizadas
   - [ ] Quimica Geral e Ciencia dos Materias
   - [ ] Probabilidade e Estatistica
 
-- [ ] **Terceiro Semestre**
+- [x] **Terceiro Semestre**
   - [ ] Calculo Diferencial e Integral 3
   - [ ] Fisica Geral Experimental 3
+    - [ ] A Lei de Coulumb
+    - [ ] Campos Eletricos
+    - [ ] Lei de Gauss
+    - [ ] Potencial Eletrico
+    - [ ] Capacitancia
+    - [ ] Corrente e Resistencia
+    - [ ] Circuitos
+    - [ ] Campos Magneticos
+    - [ ] Campos Magneticos Produzidos por Corrente
+    - [ ] Inducao e Indutancia
+    - [ ] Oscilacoes Eletromagneticas e Corrente Alternada
+    - [ ] Equacoes de Maxwell; Magnetismo da Materia 
   - [ ] Desenho Tecnico
+    - [ ] xxx
   - [ ] Eletricidade Aplicada
+    - [ ] 
   - [ ] Mecanica Geral
+    - [ ] xxx
   - [ ] Estrutura de Dados 1
+    - [ ] xxx
 
 - [ ] **Quarto Semestre**
   - [ ] Calculo Diferencial e Integral 4
