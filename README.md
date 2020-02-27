@@ -13,10 +13,10 @@ Materia Pendentes/Finalizadas
 
 - [x] **Segundo Semestre**
   - [ ] Calculo Diferencial e Integral 2
-  - [ ] Algebra Linear
+  - [X] Algebra Linear
   - [ ] Fisica Geral e Experimental 2
   - [X] Algoritmos2
-  - [ ] Quimica Geral e Ciencia dos Materias
+  - [X] Quimica Geral e Ciencia dos Materias
   - [ ] Probabilidade e Estatistica
   
 - [x] **Terceiro Semestre**
